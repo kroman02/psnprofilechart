@@ -1,0 +1,50 @@
+body{
+    color: #fff;
+    background-image: url('../images/er_rh.png');
+}
+
+main {
+    display:flex;
+    justify-content: center;
+
+}
+
+nav{
+    display: flex;
+}
+.orderby{
+    font-weight: bold;
+}
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+a {
+    color: #fff;
+}
+
+a:visited{
+    color: #fff;
+}
+
+a:hover{
+    color: #ffab2e;
+}
+
+.table_container{
+    margin-top:70px;
+    text-align: center;
+    background: rgba(0, 0, 0, .6);
+    padding: 5em;
+}
+
+table{
+    border: 3px solid white;
+}
+th, td {
+    border: 1px solid #fff;
+    padding: 0.5em;
+}
+
