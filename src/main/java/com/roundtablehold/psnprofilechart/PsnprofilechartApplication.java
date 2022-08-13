@@ -6,6 +6,7 @@ import com.roundtablehold.psnprofilechart.data.PSNProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
 import java.io.IOException;
@@ -18,15 +19,6 @@ public class PsnprofilechartApplication {
 		SpringApplication.run(PsnprofilechartApplication.class, args);
 	}
 
-
-
-
-//	@Bean
-//	public void runApp() throws IOException {
-//		ProfileScraperService scraper = new ProfileScraperService(getWebClient());
-//		System.out.println(scraper.getPSNProfile("xxartios").toString());
-//
-//	}
 
 
 

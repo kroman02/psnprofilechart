@@ -16,17 +16,21 @@ import java.util.List;
 @RequestMapping("/roundtablehold")
 public class PSNProfileController {
 
+
+   private static int visits;
    private final PSNProfileService psnProfileService;
 
    public PSNProfileController(PSNProfileService psnProfileService){
-
+       visits = 0;
        this.psnProfileService = psnProfileService;
    }
 
    @GetMapping
    public String getProfiles(Model model){
+        visits++;
         List<PSNProfile> profiles = psnProfileService.getAllProfiles();
         model.addAttribute("profiles", profiles);
+        model.addAttribute("visits", visits);
         return "roundtablehold";
    }
 

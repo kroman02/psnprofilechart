@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/profiles")
+@RequestMapping("roundtablehold/api/v1/profiles")
 public class PSNProfileRestController {
 
     private final PSNProfileService psnProfileService;
@@ -40,6 +40,11 @@ public class PSNProfileRestController {
         }else{
             return profile;
         }
+    }
+
+    @GetMapping("/porcodio")
+    public String porcodio(){
+        return "dio merda";
     }
 
     @ExceptionHandler(ProfileDoesNotExistException.class)
