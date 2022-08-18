@@ -15,7 +15,7 @@
             <p class="action first"><span class="action_name">Add a profile</span> | request type: <span class="post">POST</span></p>
             <p>Description: Adds the profile to the table if said profile exists.</p>
             <p>If the profile is private, a [PRIVATE] tag is added to the username.</p>
-            <p class="add_endpoint"><code>localhost/api/v1/profiles/add?username=<span class="highlight">[USERNAME]</code></span></p>
+            <p class="add_endpoint"><code>localhost/api/v1/profiles/add?username=<span class="highlight">USERNAME</span></code></p>
             <hr>
             <p class="action"><span class="action_name">Get profile</span> | request type:  <span class="get">GET</span>
             <p>Description: Returns a PSN profile object, without adding it to the table.</p>
@@ -32,39 +32,41 @@
                 </code>
                 </pre>
             </p>
-            <p class="add_endpoint"><code>localhost/api/v1/profiles/getPSNProfile?username=<span class="highlight">[USERNAME]</code></span></p>
+            <p class="add_endpoint"><code>localhost/api/v1/profiles/getPSNProfile?username=<span class="highlight">USERNAME</span></code></p>
             <hr>
             <p class="action"><span class="action_name">Get all profiles</span> | request type:  <span class="get">GET</span>
-            <p>Description: Returns all PSN profile objects from the table table.</p>
-            <p class="add_endpoint"><code>localhost/api/v1/profiles/getall</p>
+            <p>Description: Returns an array of all PSN profile objects from the table.</p>
+            <p class="add_endpoint"><code>localhost/api/v1/profiles/getall</code></p>
             <hr>
             <p class="action"><span class="action_name">Delete profile</span> | request type:  <span class="delete">DELETE</span>
-            <p>Removes a profile from the table if said profile exists.</p>
-            <p class="add_endpoint"><code>localhost/api/v1/profiles/remove?username=<span class="highlight">[USERNAME]</code></span></p>
+            <p>Removes a profile from the table if it exists.</p>
+            <p class="add_endpoint"><code>localhost/api/v1/profiles/remove?username=<span class="highlight">USERNAME</span></code></p>
         </div>
     </div>
     <div class="table_container">
         <h1 class="rt_ch">Roundtable Hold - PSN Chart</h1>
-        <nav><p class="orderby">Order by</p>
+        <nav>
             <ul>
-                <li>
-                    <a th:href="@{/roundtablehold/level}">Level</a>
+                <li class="list_link"><p class="orderby">Order by</p></li>
+                <li class="list_link">
+                    <a th:href="@{/level}">Level</a>
                 </li>
-                <li>
-                    <a th:href="@{/roundtablehold/total}">Total</a>
+                <li class="list_link">
+                    <a th:href="@{/total}">Total</a>
                 </li>
-                <li>
-                    <a th:href="@{/roundtablehold/platinum}" class="plat">Platinum</a>
+                <li class="list_link">
+                    <a th:href="@{/platinum}" class="plat">Platinum</a>
                 </li>
-                <li>
-                    <a th:href="@{/roundtablehold/gold}" class="gold">Gold</a>
+                <li class="list_link">
+                    <a th:href="@{/gold}" class="gold">Gold</a>
                 </li>
-                <li>
-                    <a th:href="@{/roundtablehold/silver}" class="silv">Silver</a>
+                <li class="list_link">
+                    <a th:href="@{/silver}" class="silv">Silver</a>
                 </li>
-                <li>
-                    <a th:href="@{/roundtablehold/bronze}" class="bron">Bronze</a>
+                <li class="list_link last_list_element">
+                    <a th:href="@{/bronze}" class="bron">Bronze</a>
                 </li>
+                <li><a th:href="@{/}"><button  class="refresh_button">Refresh table</button></a></li>
             </ul></nav>
         <table id="chart_table">
             <tr>
@@ -89,6 +91,7 @@
             </tr>
 
         </table>
+
     </div>
 
 </main>

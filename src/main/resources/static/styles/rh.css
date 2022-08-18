@@ -1,28 +1,68 @@
 body{
     color: #fff;
     background-image: url('../images/er_rh.png');
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
 }
 
 main {
     display:flex;
     justify-content: center;
+    flex-wrap: wrap-reverse;
 
+
+}
+
+.rt_ch {
+    font-family: 'Cormorant SC', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: #f8efc2;
 }
 
 nav{
     display: flex;
+    align-items: center;
 }
 .orderby{
     font-weight: bold;
+    margin-right: 10px;
 }
 ul {
+    font-size: 0.8rem;
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
-    width: 50%;
+    width: 100%;
+    align-items: center;
+    padding-left: 0;
 }
+
+.list_link{
+    margin-right: 5px;
+}
+
 a {
     color: #fff;
+}
+
+button {
+    margin-top: 20px;
+    -webkit-transition: all 500ms ease;
+}
+
+
+
+.refresh_button {
+    margin-top: 10px;
+    width: fit-content;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: #606060 1px solid;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    margin-left: auto;
 }
 
 a:visited{
@@ -37,14 +77,192 @@ a:hover{
     margin-top:70px;
     text-align: center;
     background: rgba(0, 0, 0, .6);
-    padding: 5em;
+    padding: 1em 5em 5em 5em;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: #606060 1px solid;
+    max-height: 2000px;
+    overflow: scroll;
+
 }
 
 table{
     border: 3px solid white;
+    width: 100%;
+    font-size: 0.9rem;
 }
 th, td {
     border: 1px solid #fff;
     padding: 0.5em;
 }
 
+.instructions{
+    background: rgba(0, 0, 0, .6);
+    padding: 2em;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: #606060 1px solid;
+    font-size: 0.8rem;
+    /*position: absolute;*/
+    /*top: 5rem;*/
+    /*left: 5rem;*/
+    margin-right: 1rem;
+
+
+}
+
+hr {
+
+}
+
+.instructions > p {
+    word-break: break-all;
+    white-space: normal;
+}
+
+.instructions_container{
+    margin-top:70px;
+
+}
+
+.plat{
+    color: #84cfec;
+}
+.gold{
+    color: #ffeba9;
+}
+.silv{
+    color: #e8f2fc;
+}
+.bron{
+    color: #f6c8ad;
+}
+
+.action {
+    margin-top: 25px;
+}
+
+.action.first{
+    margin-top: 5px;
+}
+
+.highlight {
+    color: #6cb815;
+}
+
+.action_name {
+    font-weight: bold;
+}
+
+.post {
+    color: #269cff;
+}
+
+.get {
+    color: #ffaf26;
+}
+
+.delete {
+    color: #ff443c;
+}
+
+.list_link.last_list_element {
+    margin-right: auto;
+}
+
+
+@media (max-width: 1450px) {
+    main{min-width: 70%}
+    .instructions{
+        padding: 1em;
+        border-radius: 10px;
+        /*position: absolute;*/
+        /*top: 5rem;*/
+        /*left: 5rem;*/
+        margin-right: 0rem;
+        width: 100%;
+
+
+    }
+    .instructions_container{
+        margin-top:10px;
+        display: flex;
+        justify-content: center;
+
+    }
+    .table_container{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em 2em 2em 2em;
+
+    }
+}
+
+@media (max-width: 657px) {
+    .rt_ch {font-size: 2rem}
+
+    main{
+        margin: 0;
+    }
+    .refresh_button {
+        padding: 0.2rem .3rem 0.2rem .3rem;
+        font-size: 0.7rem;
+    }
+
+    button {
+        margin-top: 20px;
+        -webkit-transition: all 500ms ease;
+        padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+    }
+
+    .table_container{
+        margin-top: 10px;
+    }
+    table{
+        border: 2px solid white;
+        width: 100%;
+        font-size: 0.8rem;
+    }
+    th, td {
+        border: 1px solid #fff;
+        padding: 0.2em;
+    }
+    nav {
+        font-size: 0.9rem;
+        width: 100%;
+    }
+    nav > a{
+        margin-right: 5px;
+    }
+
+    li {
+        padding: 0.2rem;
+    }
+}
+
+button:hover {
+    background-color: #585858;
+    -webkit-transition: all 500ms ease;
+}
+
+
+/*::-webkit-scrollbar {*/
+/*    width: 12px;*/
+/*    height: 12px;*/
+/*}*/
+
+/*::-webkit-scrollbar-track {*/
+/*    background: #f5f5f5;*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*::-webkit-scrollbar-thumb {*/
+/*    border-radius: 10px;*/
+/*    background: #ccc;*/
+/*}*/
+
+/*::-webkit-scrollbar-thumb:hover {*/
+/*    background: #999;*/
+/*}*/
