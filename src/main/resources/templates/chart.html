@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Roundtable Hold</title>
+    <link th:href="@{/styles/rh.css}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cormorant+SC:wght@500&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+    <div class="instructions_container">
+        <div class="instructions"><h2>Endpoints</h2>
+            <p class="action first"><span class="action_name">Add a profile</span> | request type: <span class="post">POST</span></p>
+            <p>Description: Adds the profile to the table if said profile exists.</p>
+            <p>If the profile is private, a [PRIVATE] tag is added to the username.</p>
+            <p class="add_endpoint"><code>localhost/api/v1/profiles/add?username=<span class="highlight">[USERNAME]</code></span></p>
+            <hr>
+            <p class="action"><span class="action_name">Get profile</span> | request type:  <span class="get">GET</span>
+            <p>Description: Returns a PSN profile object, without adding it to the table.</p>
+            <p><pre><code>Example:
+                {"id":0,
+                "username":"XxGamer88 ",
+                "level":338,
+                "levelProgress":"3%",
+                "totalTrophies":2897,
+                "platinumTrophies":51,
+                "goldTrophies":356,
+                "silverTrophies":662,
+                "bronzeTrophies":1828}
+                </code>
+                </pre>
+            </p>
+            <p class="add_endpoint"><code>localhost/api/v1/profiles/getPSNProfile?username=<span class="highlight">[USERNAME]</code></span></p>
+            <hr>
+            <p class="action"><span class="action_name">Get all profiles</span> | request type:  <span class="get">GET</span>
+            <p>Description: Returns all PSN profile objects from the table table.</p>
+            <p class="add_endpoint"><code>localhost/api/v1/profiles/getall</p>
+            <hr>
+            <p class="action"><span class="action_name">Delete profile</span> | request type:  <span class="delete">DELETE</span>
+            <p>Removes a profile from the table if said profile exists.</p>
+            <p class="add_endpoint"><code>localhost/api/v1/profiles/remove?username=<span class="highlight">[USERNAME]</code></span></p>
+        </div>
+    </div>
+    <div class="table_container">
+        <h1 class="rt_ch">Roundtable Hold - PSN Chart</h1>
+        <nav><p class="orderby">Order by</p>
+            <ul>
+                <li>
+                    <a th:href="@{/roundtablehold/level}">Level</a>
+                </li>
+                <li>
+                    <a th:href="@{/roundtablehold/total}">Total</a>
+                </li>
+                <li>
+                    <a th:href="@{/roundtablehold/platinum}" class="plat">Platinum</a>
+                </li>
+                <li>
+                    <a th:href="@{/roundtablehold/gold}" class="gold">Gold</a>
+                </li>
+                <li>
+                    <a th:href="@{/roundtablehold/silver}" class="silv">Silver</a>
+                </li>
+                <li>
+                    <a th:href="@{/roundtablehold/bronze}" class="bron">Bronze</a>
+                </li>
+            </ul></nav>
+        <table id="chart_table">
+            <tr>
+                <td>PSN Username</td>
+                <td>Level</td>
+                <td>Level Progress</td>
+                <td>Total Trophies</td>
+                <td>Platinum</td>
+                <td>Gold</td>
+                <td>Silver</td>
+                <td>Bronze</td>
+            </tr>
+            <tr th:each="profile: ${profiles}">
+                <td th:text="${profile.username}">XxFlashback</td>
+                <td th:text="${profile.level}">999</td>
+                <td th:text="${profile.levelProgress}">5%</td>
+                <td th:text="${profile.totalTrophies}">567</td>
+                <td th:text="${profile.platinumTrophies}" class="plat">50</td>
+                <td th:text="${profile.goldTrophies}" class="gold">167</td>
+                <td th:text="${profile.silverTrophies}" class="silv">100</td>
+                <td th:text="${profile.bronzeTrophies}" class="bron">400</td>
+            </tr>
+
+        </table>
+    </div>
+
+</main>
+</body>
+</html>
